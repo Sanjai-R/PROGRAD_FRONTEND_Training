@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 800;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.shape-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(244, 10, 10, 0.7);
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
+
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(95, 86, 190, 0.7);
+    transition: transform 0.5s ease;
+}
+
+.circle:hover {
+    transform: scale(1.5);
+}
+
+.square:hover {
+    transform: rotate(-45deg);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid rgba(222, 217, 81, 0.7);
+    transition: transform 0.5s ease;
+}
+
+.triangle:hover {
+    transform: translate(0, -50px);
+}
+
+.parallelogram {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(231, 167, 29, 0.7);
+
+    transition: transform 0.5s ease;
+}
+
+.parallelogram:hover {
+    transform: skew(20deg);
+}
