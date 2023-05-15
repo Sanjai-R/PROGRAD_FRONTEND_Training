@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall Gift Scheme</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Shopping Mall!</h1>
+      <div class="form-group">
+        <label for="purchaseValue">Enter the purchase value:</label>
+        <input type="number" id="purchaseValue" placeholder="Purchase value" />
+      </div>
+      <button onclick="visitShop()">Visit Shop</button>
+      <div id="giftResult" class="gift-result"></div>
+    </div>
+
+    <script>
+      var totalPurchaseValue = 0;
+      var giftValue = 0;
+
+      function visitShop() {
+        var purchaseValue = parseFloat(
+          document.getElementById("purchaseValue").value
+        );
+
+        if (isNaN(purchaseValue)) {
+          alert("Invalid purchase value. Please try again.");
+          return;
+        }
+
+        totalPurchaseValue += purchaseValue;
+
+        switch (true) {
+          case totalPurchaseValue >= 5000:
+            giftValue = 3000;
+            break;
+          case totalPurchaseValue >= 3000:
+            giftValue = 1500;
+            break;
+          case totalPurchaseValue >= 1000:
+            giftValue = 500;
+            break;
+          default:
+            giftValue = 100;
+            break;
+        }
+
+        updateGiftResult();
+      }
+
+      function updateGiftResult() {
+        var giftResult = document.getElementById("giftResult");
+        giftResult.textContent =
+          "Congratulations! You have received " + giftValue + " GV as a gift.";
+      }
+    </script>
+  </body>
+</html>
