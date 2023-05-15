@@ -1,55 +1,38 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    padding: 20px;
-}
+ .container {
+     max-width: 500px;
+     margin: 50px auto;
+     background-color: #fff;
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+ }
 
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+ .container h1 {
+     text-align: center;
+     margin-bottom: 20px;
+ }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
+ .container label {
+     display: block;
+     margin-bottom: 10px;
+ }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-}
+ .container input[type="number"] {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     margin-bottom: 20px;
+ }
 
-input[type="number"],
-select {
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#discountedPrice {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #333;
-}
+ button {
+     display: block;
+     width: 100%;
+     padding: 10px;
+     font-size: 16px;
+     background-color: #4caf50;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+ }

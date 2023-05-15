@@ -3,34 +3,41 @@
   <head>
     <title>Bharat School Admission Status</title>
     <link rel="stylesheet" href="style.css" />
-    <script>
-      function checkAdmissionStatus() {
-        const marks = parseFloat(document.getElementById("marks").value);
-
-        if (marks < 50) {
-          alert("Admission Application Rejected");
-        } else if (marks >= 50 && marks < 70) {
-          alert("Acceptable to admit");
-        } else if (marks >= 70 && marks < 90) {
-          alert("Good to admit");
-        } else {
-          alert("Outstanding to admit");
-        }
-      }
-    </script>
   </head>
   <body>
-    <h1>Bharat School Admission Status</h1>
     <div class="container">
+      <h1>Bharat School Admission Status</h1>
       <label for="marks">Entrance Exam Marks:</label>
       <input
         type="number"
         id="marks"
-        step="0.01"
+        step="1"
         placeholder="Enter marks"
         required
       />
       <button onclick="checkAdmissionStatus()">Check Admission Status</button>
+      <div>
+        <h1 id="admissionStatus"></h1>
+      </div>
     </div>
   </body>
+  <script>
+    function checkAdmissionStatus() {
+      const marks = parseFloat(document.getElementById("marks").value);
+      let status = "";
+      if (marks < 0 || marks > 100) {
+        status = "Invalid marks";
+      } else if (marks < 50) {
+        status = "Admission Application Rejected";
+      } else if (marks >= 50 && marks < 70) {
+        status = "Acceptable to admit";
+      } else if (marks >= 70 && marks < 90) {
+        status = "Good to admit";
+      } else if (marks >= 90 && marks < 100) {
+        status = "Outstanding to admit";
+      }
+
+      document.getElementById("admissionStatus").innerText = status;
+    }
+  </script>
 </html>
