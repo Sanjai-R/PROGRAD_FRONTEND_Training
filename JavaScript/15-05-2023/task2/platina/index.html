@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Platina Bakery Discount Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function calculateDiscountedPrice() {
+        const price = parseFloat(document.getElementById("price").value);
+        const dayOfWeek = parseInt(document.getElementById("dayOfWeek").value);
+        let discount = 0;
+
+        switch (dayOfWeek) {
+          case 1: // Monday
+            discount = 0.15;
+            break;
+          case 2: // Tuesday
+            discount = 0.1;
+            break;
+          case 3: // Wednesday
+            discount = 0.12;
+            break;
+          case 4: // Thursday
+            discount = 0.11;
+            break;
+          case 5: // Friday
+            discount = 0.13;
+            break;
+          case 6: // Saturday
+            discount = 0.14;
+            break;
+          case 0: // Sunday
+            discount = 0.15;
+            break;
+          default:
+            discount = 0;
+        }
+
+        const discountedPrice = price - price * discount;
+        document.getElementById("discountedPrice").innerHTML =
+          "Discounted Price: $" + discountedPrice.toFixed(2);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Platina Bakery Discount Calculator</h1>
+    <div class="container">
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        id="price"
+        step="0.01"
+        placeholder="Enter price"
+        required
+      />
+
+      <label for="dayOfWeek">Day of the Week:</label>
+      <select id="dayOfWeek">
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5">Friday</option>
+        <option value="6">Saturday</option>
+        <option value="0">Sunday</option>
+      </select>
+
+      <button onclick="calculateDiscountedPrice()">Calculate Discount</button>
+      <p id="discountedPrice"></p>
+    </div>
+  </body>
+</html>
